@@ -2,15 +2,21 @@
   <section>
     <header><h1>My Friends</h1></header>
     <ul>
-      <friend-contact></friend-contact>
-      <friend-contact></friend-contact>
+      <friend-contact
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="false"
+      ></friend-contact>
     </ul>
   </section>
 </template>
 
 <script>
 export default {
-  data9 () {
+  data () {
     return {
       friends: [
         {
@@ -88,6 +94,7 @@ header {
   background-color: #15095b;
   color: white;
   padding: 0.3rem 1rem;
+  margin: 0 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
 }
 
